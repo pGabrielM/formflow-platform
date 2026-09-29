@@ -23,7 +23,7 @@ export default async function PublicFormPage({ params, searchParams }: Params) {
   return (
     <div className={embed ? 'bg-white' : 'min-h-screen bg-zinc-50 px-4 py-10 sm:py-16'}>
       <div className={embed ? 'p-6' : 'mx-auto max-w-2xl'}>
-        <div className={embed ? '' : 'rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-10'}>
+        <div className={embed ? '' : 'glass p-6 sm:p-10'}>
           {!embed && <div className="-mx-6 -mt-6 mb-8 h-1.5 rounded-t-2xl bg-brand-600 sm:-mx-10 sm:-mt-10" />}
           {form.status === 'CLOSED' ? (
             <div className="py-10 text-center">

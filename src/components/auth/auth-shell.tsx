@@ -13,34 +13,22 @@ export function AuthShell({
   children: ReactNode
 }) {
   return (
-    <div className="grid min-h-screen lg:grid-cols-2">
-      <div className="flex flex-col px-6 py-8 sm:px-12">
-        <Link href="/" className="w-fit">
-          <Logo />
-        </Link>
-        <div className="mx-auto flex w-full max-w-sm flex-1 flex-col justify-center py-10">
-          <h1 className="text-2xl font-semibold tracking-tight text-zinc-900">{title}</h1>
-          <p className="mt-1 mb-8 text-sm text-zinc-500">{subtitle}</p>
-          {children}
-        </div>
+    <div className="relative flex min-h-screen flex-col items-center justify-center px-4 py-10">
+      <Link href="/" className="absolute top-6 left-6">
+        <Logo />
+      </Link>
+      <div className="glass w-full max-w-md rounded-[2rem] p-8 sm:p-10">
+        <h1 className="text-3xl font-extrabold tracking-tight text-zinc-900">{title}</h1>
+        <p className="mt-1.5 mb-8 text-sm text-zinc-600">{subtitle}</p>
+        {children}
       </div>
-      <div className="relative hidden overflow-hidden bg-zinc-950 lg:block">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,var(--color-brand-600),transparent_55%)] opacity-60" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_90%,var(--color-brand-900),transparent_50%)]" />
-        <div className="relative flex h-full flex-col justify-end p-12 text-white">
-          <p className="max-w-md text-3xl leading-tight font-semibold tracking-tight">
-            {siteConfig.tagline}
-          </p>
-          <ul className="mt-8 space-y-3 text-sm text-white/75">
-            {siteConfig.highlights.map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-400" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <ul className="mt-8 flex max-w-md flex-col items-center gap-2 text-center text-xs font-semibold text-zinc-600">
+        {siteConfig.highlights.map((item) => (
+          <li key={item} className="glass rounded-2xl px-4 py-1.5">
+            {item}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

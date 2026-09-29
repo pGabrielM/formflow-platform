@@ -4,21 +4,21 @@ import type { ComponentProps } from 'react'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/40 disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-400/30 disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
-        default: 'bg-brand-600 text-white shadow-sm hover:bg-brand-700',
-        secondary: 'border border-zinc-200 bg-white text-zinc-800 shadow-sm hover:bg-zinc-50',
-        ghost: 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900',
-        danger: 'bg-red-600 text-white shadow-sm hover:bg-red-700',
+        default: 'bg-gradient-to-r from-brand-600 to-indigo-500 text-white shadow-glow hover:-translate-y-px hover:brightness-110',
+        secondary: 'border border-white bg-white/80 text-zinc-800 shadow-soft backdrop-blur hover:bg-white',
+        ghost: 'text-zinc-600 hover:bg-white/70 hover:text-zinc-900',
+        danger: 'bg-red-500 text-white shadow-sm hover:bg-red-600',
         dark: 'bg-zinc-900 text-white shadow-sm hover:bg-zinc-800',
       },
       size: {
-        default: 'h-9 px-4',
-        sm: 'h-8 px-3 text-xs',
-        lg: 'h-11 px-6 text-base',
-        icon: 'size-9',
+        default: 'h-10 px-5',
+        sm: 'h-8 px-3.5 text-xs',
+        lg: 'h-12 px-7 text-base',
+        icon: 'size-10',
       },
     },
     defaultVariants: { variant: 'default', size: 'default' },

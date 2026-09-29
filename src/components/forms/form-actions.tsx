@@ -35,7 +35,7 @@ export function FormActions({ formId, slug, status }: { formId: string; slug: st
           </Button>
         </Dropdown.Trigger>
         <Dropdown.Portal>
-          <Dropdown.Content align="end" sideOffset={6} className="z-50 w-56 rounded-xl border border-zinc-200 bg-white p-1.5 shadow-lg">
+          <Dropdown.Content align="end" sideOffset={6} className="z-50 w-56 rounded-2xl border border-white bg-white/95 p-1.5 shadow-soft backdrop-blur-xl">
             {status === 'PUBLISHED' && (
               <Dropdown.Item className={item} onSelect={() => run(() => setFormStatus(formId, 'CLOSED'), { success: 'Respostas encerradas.' })}>
                 <Lock className="size-4" /> Encerrar respostas

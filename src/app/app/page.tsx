@@ -56,7 +56,7 @@ export default async function FormsPage() {
             ))}
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm">
+          <div className="glass overflow-hidden">
             <table className="w-full text-sm">
               <thead className="border-b border-zinc-100 bg-zinc-50 text-left text-xs text-zinc-500">
                 <tr>

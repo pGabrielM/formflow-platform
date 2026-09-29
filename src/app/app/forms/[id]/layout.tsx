@@ -30,7 +30,7 @@ export default async function FormLayout({ children, params }: { children: React
         </div>
         <FormActions formId={form.id} slug={form.slug} status={form.status} />
       </div>
-      <div className="mb-6 border-b border-zinc-200">
+      <div className="mb-6">
         <FormTabs formId={form.id} responses={form._count.responses} />
       </div>
       {children}

@@ -12,14 +12,14 @@ export function FormTabs({ formId, responses }: { formId: string; responses: num
     { href: `/app/forms/${formId}/share`, label: 'Compartilhar' },
   ]
   return (
-    <nav className="-mb-px flex gap-6 overflow-x-auto">
+    <nav className="inline-flex gap-1 overflow-x-auto rounded-full border border-white bg-white/70 p-1 shadow-soft">
       {tabs.map((tab) => (
         <Link
           key={tab.href}
           href={tab.href}
           className={cn(
-            'border-b-2 pb-3 text-sm font-medium whitespace-nowrap transition-colors',
-            pathname.startsWith(tab.href) ? 'border-brand-600 text-brand-700' : 'border-transparent text-zinc-500 hover:text-zinc-800',
+            'rounded-full px-4 py-1.5 text-sm font-semibold whitespace-nowrap transition-colors',
+            pathname.startsWith(tab.href) ? 'bg-zinc-900 text-white' : 'text-zinc-500 hover:text-zinc-900',
           )}
         >
           {tab.label}

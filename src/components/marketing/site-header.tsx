@@ -6,21 +6,21 @@ import { siteConfig } from '@/config/site'
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-zinc-200/70 bg-white/80 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4 sm:px-6">
+    <div className="sticky top-0 z-40 px-3 pt-3 sm:px-6 sm:pt-4">
+      <header className="glass mx-auto flex h-14 max-w-5xl items-center gap-6 rounded-full px-4 pr-2">
         <Link href="/">
           <Logo />
         </Link>
-        <nav className="hidden items-center gap-6 text-sm text-zinc-600 md:flex">
-          <a href="#recursos" className="hover:text-zinc-900">
-            Recursos
-          </a>
-          <a href="#como-funciona" className="hover:text-zinc-900">
-            Como funciona
-          </a>
-          <a href="#stack" className="hover:text-zinc-900">
-            Tecnologia
-          </a>
+        <nav className="hidden items-center gap-1 text-sm font-semibold text-zinc-600 md:flex">
+          {[
+            ['#recursos', 'Recursos'],
+            ['#como-funciona', 'Como funciona'],
+            ['#stack', 'Tecnologia'],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="rounded-full px-3 py-1.5 hover:bg-white hover:text-zinc-900">
+              {label}
+            </a>
+          ))}
         </nav>
         <div className="ml-auto flex items-center gap-2">
           <Button asChild variant="ghost" size="icon" className="hidden sm:inline-flex">
@@ -28,14 +28,11 @@ export function SiteHeader() {
               <Github className="size-5" />
             </a>
           </Button>
-          <Button asChild variant="secondary" className="hidden sm:inline-flex">
-            <Link href="/login">Entrar</Link>
-          </Button>
-          <Button asChild>
+          <Button asChild size="sm">
             <Link href="/login">Testar demo</Link>
           </Button>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   )
 }

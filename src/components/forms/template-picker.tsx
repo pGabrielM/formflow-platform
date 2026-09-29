@@ -14,7 +14,7 @@ export function TemplatePicker({ templates }: { templates: Pick<FormTemplate, 'i
           key={template.id}
           disabled={pending}
           onClick={() => startTransition(() => createFormFromTemplate(template.id).then(() => undefined))}
-          className="group flex flex-col rounded-xl border border-zinc-200 bg-white p-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md disabled:opacity-60"
+          className="group flex flex-col glass p-6 text-left transition hover:-translate-y-1 hover:border-brand-200 disabled:opacity-60"
         >
           <span className="font-semibold text-zinc-900">{template.name}</span>
           <span className="mt-1 flex-1 text-sm text-zinc-500">{template.description}</span>

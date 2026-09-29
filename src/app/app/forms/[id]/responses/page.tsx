@@ -135,7 +135,7 @@ export default async function ResponsesPage({
   return (
     <div>
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-        <div className="flex rounded-lg border border-zinc-200 bg-white p-1 shadow-sm">
+        <div className="flex rounded-full border border-white bg-white/80 p-1 shadow-soft">
           {[
             ['summary', 'Resumo'],
             ['table', 'Individuais'],
@@ -195,7 +195,7 @@ export default async function ResponsesPage({
           </div>
         </div>
       ) : (
-        <div className="overflow-x-auto rounded-xl border border-zinc-200 bg-white shadow-sm">
+        <div className="glass overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="border-b border-zinc-100 bg-zinc-50 text-left text-xs text-zinc-500">
               <tr>

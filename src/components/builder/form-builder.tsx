@@ -128,7 +128,7 @@ export function FormBuilder({
           </Button>
         </div>
 
-        <div className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
+        <div className="glass p-5">
           <Label htmlFor="form-title">Título do formulário</Label>
           <Input
             id="form-title"
@@ -167,7 +167,7 @@ export function FormBuilder({
               <li
                 key={field.id}
                 className={cn(
-                  'rounded-xl border bg-white shadow-sm transition-colors',
+                  'rounded-2xl border bg-white/80 shadow-soft transition-colors',
                   selected ? 'border-brand-400 ring-2 ring-brand-500/15' : 'border-zinc-200',
                 )}
               >
@@ -296,7 +296,7 @@ export function FormBuilder({
           })}
         </ol>
 
-        <div className="rounded-xl border border-dashed border-zinc-300 bg-white p-4">
+        <div className="rounded-2xl border-2 border-dashed border-brand-200 bg-white/60 p-4">
           <p className="mb-3 text-sm font-medium text-zinc-700">Adicionar pergunta</p>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             {FIELD_TYPES.map(({ type, label }) => {
@@ -316,7 +316,7 @@ export function FormBuilder({
           </div>
         </div>
 
-        <details className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
+        <details className="glass p-5">
           <summary className="cursor-pointer text-sm font-medium text-zinc-800">Envio e integrações</summary>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div>
@@ -360,7 +360,7 @@ export function FormBuilder({
 
       <div className="xl:sticky xl:top-20 xl:h-[calc(100vh-6rem)] xl:overflow-y-auto">
         <p className="mb-2 text-xs font-medium tracking-wide text-zinc-400 uppercase">Pré-visualização</p>
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+        <div className="glass p-6 sm:p-8">
           <div className="-mx-6 -mt-6 mb-6 h-1.5 rounded-t-2xl bg-brand-600 sm:-mx-8 sm:-mt-8" />
           <FormRenderer
             title={settings.title || 'Sem título'}
