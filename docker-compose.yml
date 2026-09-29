@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: formflow-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: formflow
+      POSTGRES_PASSWORD: formflow
+      POSTGRES_DB: formflow
+    ports:
+      - '${POSTGRES_PORT:-5452}:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U formflow -d formflow']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres-data:

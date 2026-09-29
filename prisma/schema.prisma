@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  createdAt    DateTime @default(now()) @map("created_at")
+  forms        Form[]
+
+  @@map("users")
+}
+
+enum FormStatus {
+  DRAFT
+  PUBLISHED
+  CLOSED
+}
+
+model Form {
+  id             String     @id @default(cuid())
+  ownerId        String     @map("owner_id")
+  title          String
+  description    String?
+  slug           String     @unique
+  status         FormStatus @default(DRAFT)
+  submitLabel    String     @default("Enviar") @map("submit_label")
+  successMessage String     @default("Obrigado! Sua resposta foi registrada.") @map("success_message")
+  webhookUrl     String?    @map("webhook_url")
+  createdAt      DateTime   @default(now()) @map("created_at")
+  updatedAt      DateTime   @updatedAt @map("updated_at")
+  owner          User       @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  fields         Field[]
+  responses      Response[]
+  webhookLogs    WebhookLog[]
+
+  @@index([ownerId])
+  @@map("forms")
+}
+
+enum FieldType {
+  SHORT_TEXT
+  LONG_TEXT
+  EMAIL
+  PHONE
+  NUMBER
+  DATE
+  SINGLE_CHOICE
+  MULTIPLE_CHOICE
+  DROPDOWN
+  RATING
+  NPS
+  YES_NO
+}
+
+model Field {
+  id        String    @id @default(cuid())
+  formId    String    @map("form_id")
+  type      FieldType
+  label     String
+  helpText  String?   @map("help_text")
+  required  Boolean   @default(false)
+  options   String[]  @default([])
+  position  Int
+  form      Form      @relation(fields: [formId], references: [id], onDelete: Cascade)
+
+  @@index([formId, position])
+  @@map("fields")
+}
+
+model Response {
+  id        String   @id @default(cuid())
+  formId    String   @map("form_id")
+  answers   Json
+  createdAt DateTime @default(now()) @map("created_at")
+  form      Form     @relation(fields: [formId], references: [id], onDelete: Cascade)
+
+  @@index([formId, createdAt])
+  @@map("responses")
+}
+
+model WebhookLog {
+  id         String   @id @default(cuid())
+  formId     String   @map("form_id")
+  url        String
+  statusCode Int?     @map("status_code")
+  ok         Boolean
+  error      String?
+  durationMs Int      @map("duration_ms")
+  createdAt  DateTime @default(now()) @map("created_at")
+  form       Form     @relation(fields: [formId], references: [id], onDelete: Cascade)
+
+  @@index([formId, createdAt])
+  @@map("webhook_logs")
+}

@@ -1,42 +1,38 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@import 'tailwindcss';
+
+@theme inline {
+  --color-brand-50: var(--color-rose-50);
+  --color-brand-100: var(--color-rose-100);
+  --color-brand-200: var(--color-rose-200);
+  --color-brand-300: var(--color-rose-300);
+  --color-brand-400: var(--color-rose-400);
+  --color-brand-500: var(--color-rose-500);
+  --color-brand-600: var(--color-rose-600);
+  --color-brand-700: var(--color-rose-700);
+  --color-brand-800: var(--color-rose-800);
+  --color-brand-900: var(--color-rose-900);
+  --color-brand-950: var(--color-rose-950);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, monospace;
 }
 
-html,
+:root {
+  color-scheme: light;
+}
+
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  background-color: #111;
-  color: #bbb;
+  @apply bg-zinc-50 text-zinc-900 antialiased;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+::selection {
+  @apply bg-brand-200 text-brand-950;
 }
 
-.theme {
-  transition: 1s all ease;
-}
-
-.light {
-  background-color: white;
-  color: #111;
-}
-
-.dark {
-  background-color: #111;
-  color: #bbb;
-}
-
-.container {
-  max-width: 1366px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 0 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+@layer components {
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-zinc-700;
+  }
+  .field-error {
+    @apply mt-1 text-xs text-red-600;
+  }
 }
