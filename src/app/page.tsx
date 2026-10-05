@@ -6,7 +6,7 @@ const content: LandingContent = {
   title: 'Formulários que viram decisões, não planilhas bagunçadas',
   subtitle:
     'Monte o formulário arrastando perguntas, compartilhe um link ou incorpore no site e veja o resumo das respostas na hora — com NPS, gráficos por pergunta, CSV e webhook para o seu CRM.',
-  screenshot: { src: '/screenshots/summary.png', alt: 'Resumo de respostas do FormFlow' },
+  screenshot: { src: '/screenshots/summary.png', alt: 'Resumo de respostas do Form Flow' },
   proof: ['12 tipos de pergunta', 'Incorporável em qualquer site', 'Webhook a cada resposta'],
   features: [
     { icon: ListChecks, title: 'Construtor com pré-visualização', description: 'Adicione, reordene e duplique perguntas vendo exatamente o que o respondente vai ver.' },
