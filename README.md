@@ -1,4 +1,4 @@
-# FormFlow
+# Form Flow
 
 ![CI](https://github.com/pGabrielM/formflow-platform/actions/workflows/ci.yml/badge.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square)
@@ -11,6 +11,8 @@ share a link or embed it on any website, and read the answers as a ready-made re
 charts per question, CSV export and a webhook on every response so the data flows into your CRM.
 
 ![Response summary](public/screenshots/summary.png)
+
+**Live demo:** [formflow-platform.vercel.app/demo](https://formflow-platform.vercel.app/demo) — signs in straight to a sample account.
 
 > **Try it:** open the app and click **"Explorar com a conta demo"** — three forms with ~110
 > realistic responses are waiting. (`demo@formflow.dev` / `demo1234`)
@@ -54,7 +56,7 @@ Owner ─► /app/** (protected by proxy.ts) ─► Server Components + Server A
 
 ## Running locally
 
-Requirements: Node.js 20+, Docker.
+Requirements: Node.js 22+, Docker.
 
 ```bash
 cp .env.example .env.local        # then set AUTH_SECRET (npx auth secret)
