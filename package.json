@@ -53,7 +53,7 @@
     "eslint-config-next": "16.3.8",
     "prisma": "7.10.0",
     "tailwindcss": "4.3.3",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   },
   "description": "Form builder with public links, embeddable forms, response analytics, CSV export and webhooks."
 }
