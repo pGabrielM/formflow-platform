@@ -12,7 +12,7 @@ charts per question, CSV export and a webhook on every response so the data flow
 
 ![Response summary](public/screenshots/summary.png)
 
-**Live demo:** [formflow-platform.vercel.app/demo](https://formflow-platform.vercel.app/demo) — signs in straight to a sample account.
+**Live demo:** [formflow.letinfo.dev/demo](https://formflow.letinfo.dev/demo) — signs in straight to a sample account.
 
 > **Try it:** open the app and click **"Explorar com a conta demo"** — three forms with ~110
 > realistic responses are waiting. (`demo@formflow.dev` / `demo1234`)
