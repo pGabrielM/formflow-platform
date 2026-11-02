@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'Form Flow',
+  name: 'FormFlow',
   shortTagline: 'formulários que viram dados úteis',
   tagline: 'Crie formulários em minutos, compartilhe um link e acompanhe as respostas em tempo real.',
   description:
